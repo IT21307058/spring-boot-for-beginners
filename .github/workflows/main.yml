@@ -31,9 +31,7 @@ jobs:
         run: | # clean my target package (run multiple commands want to run)
           mvn clean 
           mvn -B package --file pom.xml
-          
-      - name: Build Docker Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/spring-boot-for-beginners:latest .
+
 #        uses: docker/build-push-action@v2 # buidl docker image
 #        with:
 #          context: .
@@ -45,9 +43,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Build Docker Image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/spring-boot-for-beginners:latest .
 
       - name: Push to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/spring-boot-for-beginners:latest
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:latest
 #        uses: docker/build-push-action@v2
 #        with:
 #          context: .
