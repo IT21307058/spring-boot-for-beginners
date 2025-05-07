@@ -53,7 +53,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/spring-boot-for-beginners:latest
+          tags: bhanuka222/spring-boot-for-beginners:latest
 
 #      - name: Push to Docker Hub
 #        uses: docker/build-push-action@v6
