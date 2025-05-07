@@ -1,6 +1,6 @@
 name: Build & Deploy Spring app
 
-#when to trigger this piepline
+#when to trigger this pieplins
 on:
   push:
     branches:
